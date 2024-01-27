@@ -1,0 +1,19 @@
+สิ่งที่สามารถทำได้แล้ว
+1. สามารถส่งข้อความไปยัง Line Notify ได้
+2. สามารถส่งค่าจำลอง (ระยะห่าง หน่วยเมตร) จาก Arduino ไปยัง Raspbian ได้
+3. สามารถควบคุม LED ผ่านการกำหนด GPIO ด้วยภาษา Python ได้
+4. สามารถเล่นเสียงด้วย DFPlayer Mini MP3 Player Module ด้วยค่าที่ได้จาก Arduino
+
+สิ่งที่จะปรับปรุง 
+- ข้อ 4 เนื่องจากตอนนี้ Arduino เป็นคนส่งค่าจำลอง ถึงหยุดการทำงานของ Raspbian (python file) มันก็ยังมีการเล่นเสียงอยู่
+  จะทำการปรับให้ Raspbian เมื่อได้รับค่า จะส่งค่าหรือตัวอักษรบางอย่างกลับไปยัง arduino เมื่อได้รับ ค่อยเล่นเสียงที่ 2 ตามที่ต้องการ
+
+Check List Theory
+- Python Coding (Line Notify: Token)
+- Serial Communication (Arduino, Raspbian)
+- Set GPIO (Control LED: High, Low)
+- C/C++ Coding (DFPlayer: Play MP3 file)
+
+Note
+- ค่าจำลอง (ระยะห่าง หน่วยเมตร) จะสุ่มค่า 0-10 เมื่อมีค่าตั้งแต่ 1-10 จะไม่มีการ Alert ใด ๆ เกิดขึ้น
+  แต่เมื่อมีค่าเท่ากับ 0 จะมีการเล่นเสียงตามที่ตั้งเอาไว้ และมีการ Alert ไปยัง Line Notify
