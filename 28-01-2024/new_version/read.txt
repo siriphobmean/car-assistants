@@ -1,0 +1,18 @@
+-- Car Assistants System --
+
+สิ่งที่สามารถทำได้แล้ว
+1. สามารถส่งข้อความไปยัง Line Notify ได้
+2. สามารถส่งค่าจาก Ultrasonic (ระยะห่างหน่วย cm) จาก Arduino ไปยัง Raspbian ได้
+3. สามารถควบคุม LED ผ่านการกำหนด GPIO ได้
+4. สามารถเล่นเสียงด้วย DFPlayer Mini MP3 Player Module ด้วยค่าที่ได้จาก Arduino
+   - โดยมีเงื่อนไขคือ ถ้าค่าระยะห่าง <= 6 จะทำการเล่นเสียง Alert 1 ครั้ง (เหลือคัดเลือกไฟล์เสียง)
+   - ถ้าค่าจำลองเป็นเลขอื่น ๆ ที่มากกว่า 6 จะไม่มีการเล่นเสียง Alert 
+
+Check List Theory
+- Python Coding (Line Notify: Token) | Raspberry Pi 3 Model B+
+- Serial Communication (Arduino, Raspbian) | US-100 Ultrasonic Sensor Module
+- Set GPIO (Raspbian Control LED: High, Low) | Module LED 8 ดวง
+- C/C++ Coding (Arduino: Play MP3 file) | DFPlayer Mini MP3 Player Module
+
+Note
+- ค่าที่ส่งไป ถ้ามีค่าตั้งแต่ 6 ลงไป โปรแกรมจากฝั่ง Arduino จะไม่มีการส่งค่าขึ้นมาอีก (ยกเว้นจะรีโปรแกรมใหม่)
