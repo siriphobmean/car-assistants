@@ -1,2 +1,2 @@
-# os-project
+# OS-Project
 Project - 523354 OPERATING SYSTEMS (2/2566)
