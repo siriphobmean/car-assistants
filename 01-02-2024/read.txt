@@ -16,11 +16,11 @@ Check List Theory
 
 ปัญหาที่พบ
 - ไม่สามารถเปิดไฟล์ python เมื่อระบบปฏิบัติการถูกเปิดขึ้น (autorun)
-- การเชื่อมต่อระหว่าง Raspbian, Arduino ในครั้งแรก ค่อนข้างหน่วง ถ้าปรับ Delay จะกระทบส่วนอื่น ๆ ของการรับค่าเข้ามา
 
-* ถ้าเข้าสู่ Case Accident ต้องรันโปรแกรมใหม่ใน Raspbian ทุกครั้ง เพื่อเริ่มการทำงานใหม่
+Note
+- ถ้าเข้าสู่ Case Accident ต้องรันโปรแกรมใหม่ใน Raspbian ทุกครั้ง เพื่อเริ่มการทำงานใหม่
 
 
-Note (LabOS W9)
+Sheet Lab (LabOS W9)
 sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
 @/usr/bin/python3 /home/os/test.py

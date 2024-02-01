@@ -11,11 +11,11 @@ GPIO.setmode(GPIO.BCM)
 # Define GPIO pins
 led_pins = [5, 6, 12, 13, 19, 16, 26, 20]
 
-# Setup GPIO pins as output
-for led_pin in led_pins:
-    GPIO.setup(led_pin, GPIO.OUT)
-    GPIO.output(led_pin, GPIO.HIGH)
-    sleep(0.05)
+# # Setup GPIO pins as output
+# for led_pin in led_pins:
+#     GPIO.setup(led_pin, GPIO.OUT)
+#     GPIO.output(led_pin, GPIO.HIGH)
+#     sleep(0.05)
 
 def send_line_notify(token, message):
     url = "https://notify-api.line.me/api/notify"
@@ -28,15 +28,24 @@ def send_line_notify(token, message):
     return response
 
 # Line Notify Token
-line_notify_token = "xJMlwJPQ7qC9gwrtq2G0T9nmQ75ii3YISEhbbDrQItz"
+line_notify_token = "K5jvpbiJyIvJfgGr4CpoyNqGnzePRoVpHY0mFylp9SV"
 
 car_license_plate = "อส 523354 นครราชสีมา"
+place_name = "อาคารเรียนรวม 1"
+lat, lon = 14.881037676495998, 102.01720981012612
+google_maps_link = f'google.com/maps?q={lat},{lon}'
 
-message_start = f'รถยนต์ทะเบียน "{car_license_plate}" ถูกสตาร์ท...'
+message_start = f'🚕🚗🚙\nรถยนต์ทะเบียน\n"{car_license_plate}"\nสถานะ: ถูกสตาร์ท...✅\nตำแหน่ง: {place_name}\n{google_maps_link}'
 response_start = send_line_notify(line_notify_token, message_start)
 
 if __name__ == '__main__':
     ser = serial.Serial('/dev/ttyACM0', 9600, timeout=1)
+    sleep(2)
+    # Setup GPIO pins as output
+    for led_pin in led_pins:
+        GPIO.setup(led_pin, GPIO.OUT)
+        GPIO.output(led_pin, GPIO.HIGH)
+        sleep(0.1)
     ser.reset_input_buffer()
 
     while True:
@@ -45,14 +54,11 @@ if __name__ == '__main__':
             print(line)
 
             if int(line) <= 6:
-                for _ in range(8):
-                        for led_pin in led_pins:
-                            GPIO.output(led_pin, GPIO.LOW)
-                        sleep(0.5)
-                        for led_pin in led_pins:
-                            GPIO.output(led_pin, GPIO.HIGH)
-                        sleep(0.5)
-                message_accident = f'รถยนต์ทะเบียน "{car_license_plate}" เกิดอุบัติเหตุ!'
+                place_name = "วงเวียนมหาวิทยาลัย"
+                lat, lon = 14.883795262391775, 102.02460500201975
+                google_maps_link = f'google.com/maps?q={lat},{lon}'
+
+                message_accident = f'🚕🚗🚙\nรถยนต์ทะเบียน\n"{car_license_plate}"\nสถานะ: เกิดอุบัติเหตุ🚨❗\nตำแหน่ง: {place_name}\n{google_maps_link}'
                 response_accident = send_line_notify(line_notify_token, message_accident)
                 sleep(1)
 
@@ -60,7 +66,14 @@ if __name__ == '__main__':
                     print("Notification sent successfully.")
                 else:
                     print(f"Failed to send notification. Status code: {response_accident.status_code}")
+                for _ in range(14):
+                    for led_pin in led_pins:
+                        GPIO.output(led_pin, GPIO.LOW)
+                    sleep(0.25)
+                    for led_pin in led_pins:
+                        GPIO.output(led_pin, GPIO.HIGH)
+                    sleep(0.25)
 
         for led_pin in led_pins:
             GPIO.output(led_pin, GPIO.LOW)
-            sleep(0.05)
+            sleep(0.1)
