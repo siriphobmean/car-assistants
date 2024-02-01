@@ -46,7 +46,7 @@ if __name__ == '__main__':
         GPIO.setup(led_pin, GPIO.OUT)
         GPIO.output(led_pin, GPIO.HIGH)
         sleep(0.1)
-    ser.reset_input_buffer()
+    # ser.reset_input_buffer()
 
     while True:
         if ser.in_waiting > 0:
@@ -66,7 +66,7 @@ if __name__ == '__main__':
                     print("Notification sent successfully.")
                 else:
                     print(f"Failed to send notification. Status code: {response_accident.status_code}")
-                for _ in range(14):
+                for _ in range(50):
                     for led_pin in led_pins:
                         GPIO.output(led_pin, GPIO.LOW)
                     sleep(0.25)

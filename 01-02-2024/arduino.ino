@@ -27,7 +27,7 @@ void setup() {
 void loop() {
   puertoUS100.flush();
   puertoUS100.write(0x55);
-  delay(500);
+  delay(1000);
 
   if (puertoUS100.available() >= 2) {
     MSByteDist = puertoUS100.read();
@@ -41,7 +41,7 @@ void loop() {
 
   if (cmDist <= 6) {
     myDFPlayer.play(2); // Horn!!!
-    if (sensor_value <= 6) {
+    while (sensor_value <= 6) {
       mySerial.print(sensor_value);
       mySerial.flush();
     }
