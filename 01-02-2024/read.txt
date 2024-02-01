@@ -17,11 +17,10 @@ Check List Theory
 - C/C++ Coding (Arduino: Play MP3 file) | DFPlayer Mini MP3 Player Module
 
 ปัญหาที่พบ
-- ไม่สามารถเปิดไฟล์ python เมื่อระบบปฏิบัติการถูกเปิดขึ้น (autorun)
+- ไม่สามารถเปิดไฟล์ Python เมื่อระบบปฏิบัติการถูกเปิดขึ้น (Autorun)
 
 Note
 - ถ้าเข้าสู่ Case Accident ต้องรันโปรแกรมใหม่ใน Raspbian ทุกครั้ง เพื่อเริ่มการทำงานใหม่
-
 
 Sheet Lab (LabOS W9)
 sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
