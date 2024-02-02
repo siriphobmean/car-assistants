@@ -25,7 +25,7 @@ if __name__ == '__main__':
             line = ser.readline().decode('utf-8').rstrip()
             print(line)
 
-            if line == "12":
+            if line == "12": # for test
                 message = "Value is 12. Sending notification to Line Notify."
                 response = send_line_notify(line_notify_token, message)
 

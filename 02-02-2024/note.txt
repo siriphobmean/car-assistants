@@ -1,0 +1,18 @@
+-- Cat Assistants System --
+
+สิ่งที่สามารถทำได้ (ตามวัตถุประสงค์)
+- สามารถส่งข้อความไปยัง Line Notify ได้ 2 Case (1)
+- สามารถทำให้ Raspberry Pi และ Arduino สื่อสารกันผ่าน Serial Communication ได้
+  โดยสามารถรับค่าจาก Module Ultrasonic ฝั่ง Arduino แล้วส่งไปยัง Raspberry Pi เพื่อเอาค่ามาเช็คตามเงื่อนไขในการทำสิ่งต่าง ๆ (2)
+- สามารถควบคุม Module LED 8 ดวง ได้ 2 Case (3)
+
+สิ่งที่สามารถทำได้ (เพิ่มเติม)
+- สามารถควบคุมการเล่นเสียงผ่าน Arduino ได้ 2 Case
+- สามารถส่งตำแหน่งด้วย google maps ไปพร้อมกับข้อความได้ 2 Case
+
+ทฤษฎีที่เกี่ยวข้อง
+- Line Notify (Use Python with Token)
+- Serial Communication (Arduino, Raspberry Pi)
+- GPIO (Raspberry Pi use Python for Control Pin)
+
+
