@@ -24,8 +24,8 @@ if choice == "1":
     place_name = "อาคารเรียนรวม 1"
     lat, lon = 14.881037676495998, 102.01720981012612
     google_maps_link = f'google.com/maps?q={lat},{lon}'
-    # message_start = f'🚕🚗🚙\nรถยนต์ทะเบียน\n"{car_license_plate}"\nสถานะ: ถูกสตาร์ท...✅\nตำแหน่ง: {place_name}\n{google_maps_link}'
-    message_start = f'🚕🚗🚙\nรถยนต์ทะเบียน\n"{car_license_plate}"\nสถานะ: ถูกสตาร์ท...✅'
+    message_start = f'🚕🚗🚙\nรถยนต์ทะเบียน\n"{car_license_plate}"\nสถานะ: ถูกสตาร์ท...✅\nตำแหน่ง: {place_name}\n{google_maps_link}'
+    # message_start = f'🚕🚗🚙\nรถยนต์ทะเบียน\n"{car_license_plate}"\nสถานะ: ถูกสตาร์ท...✅'
     response_start = send_line_notify(line_notify_token, message_start)
     
     if response_start.status == 200:
@@ -38,8 +38,8 @@ elif choice == "2":
     place_name = "วงเวียนมหาวิทยาลัย"
     lat, lon = 14.883795262391775, 102.02460500201975
     google_maps_link = f'google.com/maps?q={lat},{lon}'
-    # message_accident = f'🚕🚗🚙\nรถยนต์ทะเบียน\n"{car_license_plate}"\nสถานะ: เกิดอุบัติเหตุ🚨❗\nตำแหน่ง: {place_name}\n{google_maps_link}'
-    message_accident = f'🚕🚗🚙\nรถยนต์ทะเบียน\n"{car_license_plate}"\nสถานะ: เกิดอุบัติเหตุ🚨❗'
+    message_accident = f'🚕🚗🚙\nรถยนต์ทะเบียน\n"{car_license_plate}"\nสถานะ: เกิดอุบัติเหตุ🚨❗\nตำแหน่ง: {place_name}\n{google_maps_link}'
+    # message_accident = f'🚕🚗🚙\nรถยนต์ทะเบียน\n"{car_license_plate}"\nสถานะ: เกิดอุบัติเหตุ🚨❗'
     response_accident = send_line_notify(line_notify_token, message_accident)
 
     if response_accident.status == 200:

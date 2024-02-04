@@ -1,0 +1,3 @@
+Sheet Lab (LabOS W9)
+sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
+@/usr/bin/python3 /home/os/project.py
